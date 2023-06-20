@@ -590,6 +590,7 @@ a {
   background: var(--accent-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  transition: background-color var(--transition);
 }
 
 .close-icon {
@@ -597,4 +598,16 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  fill: var(--modal-overlay-color);
+  transition: fill var(--transition);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: var(--pressed-state-color);
+}
+
+.modal-btn:hover .close-icon,
+.modal-btn:focus .close-icon {
+  fill: var(--white-color);
 }
