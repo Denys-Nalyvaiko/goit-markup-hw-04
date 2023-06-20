@@ -93,6 +93,8 @@ a {
 .header {
   /* padding: 24px 0; */
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-container {
@@ -161,7 +163,7 @@ a {
   width: 100%;
   height: 4px;
   left: 0px;
-  bottom: -2px;
+  bottom: -1px;
   background: var(--pressed-state-color);
   border-radius: 2px;
 }
@@ -333,10 +335,12 @@ a {
   background-color: var(--white-color);
   flex-basis: calc((100% - 24px * 3) / 4);
   border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .team-item-text {
-  padding: 32px 16px;
+  padding: 32px 0;
 }
 
 .list-subtitle.team-subtitle {
@@ -361,12 +365,21 @@ a {
   transition: background-color var(--transition);
 }
 
+.social-list {
+  justify-content: center;
+}
+
 .social-icon {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   fill: var(--light-color);
+}
+
+.social-link {
+  width: 100%;
+  height: 100%;
 }
 
 .social-link:hover .social-container,
@@ -492,7 +505,7 @@ a {
   padding: 12px 24px;
   border: 1px solid var(--accent-color);
   transition: color var(--transition), background-color var(--transition),
-    border var(--transition);
+    border var(--transition), box-shadow var(--transition);
 }
 
 .portfolio-navigation-btn:hover,
@@ -500,6 +513,8 @@ a {
   color: var(--white-color);
   background-color: var(--pressed-state-color);
   border: 1px solid transparent;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio-examples-list {
@@ -527,7 +542,7 @@ a {
   overflow: hidden;
 }
 
-.portfolio-image-cover {
+.portflio-cover-text {
   position: absolute;
   top: 0;
   left: 0;
@@ -535,17 +550,21 @@ a {
   background-color: var(--primary-brand-color);
   transform: translateY(100%);
   transition: transform var(--transition);
-}
-
-.portfolio-link:hover .portfolio-image-cover,
-.portfolio-link:focus .portfolio-image-cover {
-  transform: translateY(0);
-}
-
-.portflio-cover-text {
   color: var(--light-color);
   padding: 0 32px;
   padding-top: 40px;
+}
+
+.portfolio-link {
+  display: block;
+  transition: box-shadow var(--transition);
+}
+
+.portfolio-link:hover .portflio-cover-text,
+.portfolio-link:focus .portflio-cover-text {
+  transform: translateY(0%);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 /* -------------------MODAL------------------- */
@@ -574,6 +593,8 @@ a {
   transform: translate(-50%, -50%) scale(100%);
   transition: transform var(--transition);
   border-radius: 4px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .backdrop.is-hidden .modal {
@@ -582,6 +603,10 @@ a {
 
 .modal-btn {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   width: 24px;
   height: 24px;
   top: 24px;
@@ -590,7 +615,7 @@ a {
   background: var(--accent-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: background-color var(--transition);
+  transition: background-color var(--transition), border var(--transition);
 }
 
 .close-icon {
@@ -605,6 +630,7 @@ a {
 .modal-btn:hover,
 .modal-btn:focus {
   background-color: var(--pressed-state-color);
+  border: none;
 }
 
 .modal-btn:hover .close-icon,
